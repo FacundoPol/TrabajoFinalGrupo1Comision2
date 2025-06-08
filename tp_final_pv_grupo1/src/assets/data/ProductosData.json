@@ -1,0 +1,50 @@
+[
+  {
+    "Id": 1,
+    "Imagen representativa": "https://ejemplo.com/imagenes/iphone15pro.jpg",
+    "Nombre": "iPhone 15 Pro",
+    "Precio": 1299.99,
+    "Descripción": "El último smartphone de Apple con chip A17 Bionic, sistema de cámara Pro avanzado y Dynamic Island.",
+    "Categoría": "Smartphones"
+  },
+  {
+    "Id": 2,
+    "Imagen representativa": "https://ejemplo.com/imagenes/macbookairm3.jpg",
+    "Nombre": "MacBook Air M3",
+    "Precio": 1099.00,
+    "Descripción": "Portátil ultradelgado y ligero con el potente chip M3 de Apple, ideal para productividad y entretenimiento.",
+    "Categoría": "Laptops"
+  },
+  {
+    "Id": 3,
+    "Imagen representativa": "https://ejemplo.com/imagenes/sonywh1000xm5.jpg",
+    "Nombre": "Auriculares Sony WH-1000XM5",
+    "Precio": 349.99,
+    "Descripción": "Auriculares con cancelación de ruido líder en la industria, calidad de sonido excepcional y comodidad superior.",
+    "Categoría": "Audio"
+  },
+  {
+    "Id": 4,
+    "Imagen representativa": "https://ejemplo.com/imagenes/samsunggalaxys24ultra.jpg",
+    "Nombre": "Samsung Galaxy S24 Ultra",
+    "Precio": 1199.99,
+    "Descripción": "El buque insignia de Samsung con cámara de 200MP, S Pen integrado y pantalla Dynamic AMOLED 2X.",
+    "Categoría": "Smartphones"
+  },
+  {
+    "Id": 5,
+    "Imagen representativa": "https://ejemplo.com/imagenes/ipadpro13m4.jpg",
+    "Nombre": "iPad Pro 13\" M4",
+    "Precio": 1499.00,
+    "Descripción": "La tablet más potente de Apple con el chip M4, pantalla Ultra Retina XDR y diseño ultradelgado.",
+    "Categoría": "Tablets"
+  },
+  {
+    "Id": 6,
+    "Imagen representativa": "https://ejemplo.com/imagenes/playstation5.jpg",
+    "Nombre": "PlayStation 5",
+    "Precio": 499.99,
+    "Descripción": "Consola de videojuegos de última generación con gráficos impresionantes y tiempos de carga ultrarrápidos.",
+    "Categoría": "Consolas"
+  }
+]
