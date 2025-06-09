@@ -1,7 +1,6 @@
-// src/App.jsx
 import { BrowserRouter } from "react-router-dom";
-import AppNavbar from "./components/Navbar";
-import AppRoutes from "./AppRoutes";
+import AppNavbar from "./assets/components/Navbar";
+import AppRoutes from "./assets/routes/AppRoutes";
 
 function App() {
   return (
