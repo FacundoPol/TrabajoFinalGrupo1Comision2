@@ -1,7 +1,7 @@
 [
   {
     "Id": 1,
-    "Imagen representativa": "https://ejemplo.com/imagenes/iphone15pro.jpg",
+    "Imagen representativa": "https://nooktech.com.ar/wp-content/uploads/2023/10/iphone-15-pro-128gb.jpg",
     "Nombre": "iPhone 15 Pro",
     "Precio": 1299.99,
     "Descripción": "El último smartphone de Apple con chip A17 Bionic, sistema de cámara Pro avanzado y Dynamic Island.",
@@ -9,7 +9,7 @@
   },
   {
     "Id": 2,
-    "Imagen representativa": "https://ejemplo.com/imagenes/macbookairm3.jpg",
+    "Imagen representativa": "https://ipowerresale.com/cdn/shop/files/media_8b7f7b3a-3fbf-4f31-8904-bde941e42bce.png?v=1747087888",
     "Nombre": "MacBook Air M3",
     "Precio": 1099.00,
     "Descripción": "Portátil ultradelgado y ligero con el potente chip M3 de Apple, ideal para productividad y entretenimiento.",
@@ -17,7 +17,7 @@
   },
   {
     "Id": 3,
-    "Imagen representativa": "https://ejemplo.com/imagenes/sonywh1000xm5.jpg",
+    "Imagen representativa": "https://www.heavenimagenes.com/heavencommerce/0f0b49b9-7465-4399-a1a2-17a5aa644970/images/v2/SONY/15058_medium.jpg",
     "Nombre": "Auriculares Sony WH-1000XM5",
     "Precio": 349.99,
     "Descripción": "Auriculares con cancelación de ruido líder en la industria, calidad de sonido excepcional y comodidad superior.",
@@ -25,7 +25,7 @@
   },
   {
     "Id": 4,
-    "Imagen representativa": "https://ejemplo.com/imagenes/samsunggalaxys24ultra.jpg",
+    "Imagen representativa": "https://images.fravega.com/f300/e8eedd7504f6f2ec596f018cae96afe5.jpg.webp",
     "Nombre": "Samsung Galaxy S24 Ultra",
     "Precio": 1199.99,
     "Descripción": "El buque insignia de Samsung con cámara de 200MP, S Pen integrado y pantalla Dynamic AMOLED 2X.",
@@ -33,7 +33,7 @@
   },
   {
     "Id": 5,
-    "Imagen representativa": "https://ejemplo.com/imagenes/ipadpro13m4.jpg",
+    "Imagen representativa": "https://back.maximstore.com/static/images/20bdb941-6051-4b92-afa2-990065dfa3f3.png",
     "Nombre": "iPad Pro 13\" M4",
     "Precio": 1499.00,
     "Descripción": "La tablet más potente de Apple con el chip M4, pantalla Ultra Retina XDR y diseño ultradelgado.",
@@ -41,7 +41,7 @@
   },
   {
     "Id": 6,
-    "Imagen representativa": "https://ejemplo.com/imagenes/playstation5.jpg",
+    "Imagen representativa": "https://castillo.vtexassets.com/arquivos/ids/159522/Consola_PlayStation_PSCFI2015_04.jpg?v=638841394913930000",
     "Nombre": "PlayStation 5",
     "Precio": 499.99,
     "Descripción": "Consola de videojuegos de última generación con gráficos impresionantes y tiempos de carga ultrarrápidos.",
