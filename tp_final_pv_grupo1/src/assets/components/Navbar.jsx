@@ -1,8 +1,11 @@
 import {Navbar, Nav, Container} from "react-bootstrap";
 import {Link} from "react-router-dom";
+import Header from "./Header"
 
 export default function AppNavbar(){
     return(
+        <div>
+            <Header />
         <Navbar bg= "success" variant="dark" expand="lg">
             <Container>
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
@@ -16,5 +19,6 @@ export default function AppNavbar(){
                 </Navbar.Collapse>
             </Container>
         </Navbar>
+        </div>
     );
 }

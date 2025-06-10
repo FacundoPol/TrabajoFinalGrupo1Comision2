@@ -1,16 +1,17 @@
 import { Container } from 'react-bootstrap'
 import Footer from '../components/Footer'
-import Header from '../components/Header'
-export default Acerca(){
 
+import Productos from '../components/ListaProductos'
+
+export default function Home(){
+//con Productos solo llamo al compunente ListaProductos, allí es en donde se encuentra el desarrollo de la funcion
     return(
       < Container>
-      <Header></Header>
-      <h1>
-      Lista de Productos
-      </h1>
+    
+      <Productos/>
+    
      <Footer></Footer>
       </Container> 
 
-    )
+    );
 }

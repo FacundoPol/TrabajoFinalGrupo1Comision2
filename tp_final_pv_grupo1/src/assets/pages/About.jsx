@@ -1,5 +1,5 @@
 import { Card, Container, Row, Col } from "react-bootstrap"
-import Footer from "./Footer";
+import Footer from "../components/Footer";
 
 export default function Acerca () {
     const integrantes = [
