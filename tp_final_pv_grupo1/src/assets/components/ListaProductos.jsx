@@ -13,7 +13,7 @@ const Productos = () => {
           const esFavorito = favoritos.includes(producto.Id); // Ver si está marcado
 
           return (
-            <Col key={producto.Id} sm={12} md={6} lg={4} className="mb-4">
+            <Col key={producto.id} sm={12} md={6} lg={4} className="mb-4">
               <Card>
                 <Card.Img variant="top" src={producto["Imagen representativa"]} style={{ height: '200px', objectFit: 'contain', backgroundColor: '#f8f9fa' }}/>
                 <Card.Body>
