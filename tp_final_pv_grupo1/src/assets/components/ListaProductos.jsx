@@ -12,7 +12,7 @@ const Productos = () => {
           const id = producto.id || producto.Id;
           const nombre = producto.Nombre || producto.title || "Sin nombre";
           const precio = producto.Precio || producto.price || 0;
-          const imagen = producto["Imagen representativa"] || producto.image || "https://via.placeholder.com/150/CCCCCC/000000?text=Sin+Imagen";
+          const imagen = producto["Imagen representativa"] || producto.image || "https://www.italfren.com.ar/images/catalogo/imagen-no-disponible.jpeg";
           const descripcion = producto.Descripcion || producto.description || "Sin descripción";
 
           const esFavorito = favoritos.includes(id);
