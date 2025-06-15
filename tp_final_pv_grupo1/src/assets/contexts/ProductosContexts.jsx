@@ -43,6 +43,15 @@ export function ProductosProvider({ children }) {
        return [...prevProductos, {...nuevoProducto, id: idParaNuevoProducto}]; });
     console.log("Nuevo producto agregado localmente en el Context:", nuevoProducto);
   };
+
+
+
+    //Funcion para eliminar producto
+    const eliminarProducto = (id) => {
+  setProductos((prevProductos) =>
+    prevProductos.filter((producto) => producto.id !== id)
+  );}
+
    //Función para alternar entre "favorito/no Favorito"
   const toggleFavorito = (id) => {
     setFavoritos((prev) =>
@@ -59,6 +68,7 @@ export function ProductosProvider({ children }) {
       loading,
       error,
       favoritos,
+      eliminarProducto,
       agregarProducto,
       toggleFavorito,
       //verDetalles (lo inhabilito porque no lo estoy usando,pero iria aqui)

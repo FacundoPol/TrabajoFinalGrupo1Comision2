@@ -3,7 +3,7 @@ import { Container, Row, Card, Button, Col } from 'react-bootstrap';
 
 const Productos = () => {
   //  extraemos productos, verDetalles, favoritos y toggleFavorito desde el contexto
-  const { productos, verDetalles, favoritos, toggleFavorito } = useProductos();
+  const { productos, eliminarProducto, verDetalles , favoritos, toggleFavorito } = useProductos();
 
   return (
     <Container>
@@ -33,6 +33,13 @@ const Productos = () => {
                     onClick={() => toggleFavorito(producto.Id)}
                   >
                     {esFavorito ? "❤️ Favorito" : "♡ Marcar favorito"}
+                  </Button>
+                  <Button
+                    variant="outline-danger"
+                    className="mt-2"
+                    onClick={() => eliminarProducto(producto.Id)}
+                  >
+                    🗑️ Eliminar
                   </Button>
                 </Card.Body>
               </Card>
