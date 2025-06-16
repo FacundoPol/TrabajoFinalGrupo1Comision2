@@ -1,5 +1,6 @@
 import { Container } from 'react-bootstrap';
 import Footer from '../components/Footer';
+import ListaFavoritos from '../components/ListaFavoritos';
 
 
 export default function Favoritos() {
@@ -7,6 +8,7 @@ export default function Favoritos() {
     <Container>
       
       <h1>Mis Productos Favoritos</h1>
+      <ListaFavoritos/>
       <Footer />
     </Container>
   );
