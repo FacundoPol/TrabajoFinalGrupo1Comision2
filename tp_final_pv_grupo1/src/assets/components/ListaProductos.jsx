@@ -8,6 +8,7 @@ const Productos = () => {
   //para el detalle del producto
 const navigate = useNavigate(); 
 
+
 // Normalizar los datos de API y los nuevos prod
   const productosNormalizados = productos.map(p => ({
     id: p.id || p.Id,
@@ -60,7 +61,9 @@ const navigate = useNavigate();
                   <Button
                     variant="outline-danger"
                     className="me-2"
+
                     onClick={() => eliminarProducto(producto.id)}
+
                   >
                     🗑️ Eliminar
                   </Button>

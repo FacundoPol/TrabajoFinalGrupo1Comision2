@@ -45,7 +45,9 @@ export default function ListaFavoritos(){
                                             className="me-2" //activo la ruta que ya esta definida en AppRoute /producto/:id
                                             onClick={() => navigate(`/producto/${producto.id}`)}> Ver Detalles
                                         </Button>
+
                                     </Card.Body>
+
                             </Card>
                         </Col>
                     )
