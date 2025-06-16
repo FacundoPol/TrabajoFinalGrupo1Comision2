@@ -14,6 +14,7 @@ export default function AppNavbar(){
                         <Nav.Link as={Link} to="/">Home</Nav.Link>
                         <Nav.Link as={Link} to="/favoritos">Favoritos</Nav.Link>
                         <Nav.Link as={Link} to="/acerca-de">Acerca de</Nav.Link>
+                        <Nav.Link as={Link} to="/agregar-prod">Agregar Producto</Nav.Link>
 
                     </Nav>
                 </Navbar.Collapse>
