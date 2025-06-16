@@ -1,9 +1,12 @@
 import { useProductos } from '../hooks/useProductos';
 import { Container, Row, Card, Button, Col } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom'; //importo use navigate
 
 const Productos = () => {
   const { productos, eliminarProducto, verDetalles, favoritos, toggleFavorito } = useProductos();
-
+  //agrego navigate para redirigir la ruta dinamica definida en AppRoutes
+  //para el detalle del producto
+const navigate = useNavigate(); 
   return (
     <Container>
       <h3>Lista de Productos:</h3>
@@ -30,9 +33,10 @@ const Productos = () => {
                   <Card.Text>${precio} - ID: {id}</Card.Text>
                   <Card.Text>{descripcion.substring(0, 100)}</Card.Text>
 
-                  <Button variant="dark" className="me-2" onClick={() => verDetalles(id)}>
-                    Ver Detalles
-                  </Button>
+                  <Button variant="dark"  
+                  className="me-2" //activo la ruta que ya esta definida en AppRoute /producto/:id
+                  onClick={() => navigate(`/producto/${id}`)}> Ver Detalles
+                  </Button>    
 
                   <Button
                     variant={esFavorito ? "danger" : "outline-secondary"}
@@ -43,7 +47,7 @@ const Productos = () => {
 
                   <Button
                     variant="outline-danger"
-                    className="mt-2"
+                    className="me-2"
                     onClick={() => eliminarProducto(id)}
                   >
                     🗑️ Eliminar
