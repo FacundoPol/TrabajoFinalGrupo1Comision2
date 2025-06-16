@@ -27,16 +27,16 @@ export default function ListaFavoritos(){
                             <Card>
                                 <Card.Img
                                     variant="top"
-                                    src={producto.image}
+                                    src={producto.imagen}
                                     style={{
                                         height: '200px',
                                         objectFit: 'contain',
                                         backgroundColor: '#f8f9fa'
                                     }}
                                     />
-                                    <CardBody>
-                                        <Card.Title>{producto.title}</Card.Title>
-                                        <Card.Text>${producto.price}</Card.Text>
+                                    <Card.Body>
+                                        <Card.Title>{producto.nombre}</Card.Title>
+                                        <Card.Text>${producto.precio}</Card.Text>
                                         <Button
                                             variant="danger"
                                             onClick={() => toggleFavorito(producto.id)}> Quitar de Favoritos
@@ -45,7 +45,9 @@ export default function ListaFavoritos(){
                                             className="me-2" //activo la ruta que ya esta definida en AppRoute /producto/:id
                                             onClick={() => navigate(`/producto/${producto.id}`)}> Ver Detalles
                                         </Button>
-                                    </CardBody>
+
+                                    </Card.Body>
+
                             </Card>
                         </Col>
                     )

@@ -7,31 +7,37 @@ const Productos = () => {
   //agrego navigate para redirigir la ruta dinamica definida en AppRoutes
   //para el detalle del producto
 const navigate = useNavigate(); 
+
+
+// Normalizar los datos de API y los nuevos prod
+  const productosNormalizados = productos.map(p => ({
+    id: p.id || p.Id,
+    nombre: p.nombre || p.Nombre || p.title || "Sin nombre",
+    precio: p.precio || p.Precio || p.price || 0,
+    imagen: p.imagen || p["Imagen representativa"] || p.image || "https://www.italfren.com.ar/images/catalogo/imagen-no-disponible.jpeg",
+    descripcion: p.descripcion || p.Descripcion || p.description || "Sin descripción",
+  }));
+
+
   return (
     <Container>
       <h3>Lista de Productos:</h3>
       <Row>
-        {productos.map((producto) => {
-          const id = producto.id || producto.Id;
-          const nombre = producto.Nombre || producto.title || "Sin nombre";
-          const precio = producto.Precio || producto.price || 0;
-          const imagen = producto["Imagen representativa"] || producto.image || "https://www.italfren.com.ar/images/catalogo/imagen-no-disponible.jpeg";
-          const descripcion = producto.Descripcion || producto.description || "Sin descripción";
-
-          const esFavorito = favoritos.includes(id);
+        {productosNormalizados.map((producto) => {
+          const esFavorito = favoritos.includes(producto.id);
 
           return (
-            <Col key={id} sm={12} md={6} lg={4} className="mb-4">
+            <Col key={producto.id} sm={12} md={6} lg={4} className="mb-4">
               <Card>
                 <Card.Img
                   variant="top"
-                  src={imagen}
+                  src={producto.imagen}
                   style={{ height: '200px', objectFit: 'contain', backgroundColor: '#f8f9fa' }}
                 />
                 <Card.Body>
-                  <Card.Title>{nombre}</Card.Title>
-                  <Card.Text>${precio} - ID: {id}</Card.Text>
-                  <Card.Text>{descripcion.substring(0, 100)}</Card.Text>
+                  <Card.Title>{producto.nombre}</Card.Title>
+                  <Card.Text>${producto.precio} - ID: {producto.id}</Card.Text>
+                  <Card.Text>{producto.descripcion.substring(0, 100)}</Card.Text>
 
                   <Button variant="dark"  
                   className="me-2" //activo la ruta que ya esta definida en AppRoute /producto/:id
@@ -40,15 +46,24 @@ const navigate = useNavigate();
 
                   <Button
                     variant={esFavorito ? "danger" : "outline-secondary"}
-                    onClick={() => toggleFavorito(id)}
+                    onClick={() => toggleFavorito(producto.id)}
                   >
                     {esFavorito ? "❤️ Favorito" : "♡ Marcar favorito"}
                   </Button>
+                   <Button
+                      variant="warning"
+                      className="mt-2"
+                      onClick={() => navigate(`/editar-producto/${producto.id}`)}
+                    >
+                       Editar
+                    </Button>
 
                   <Button
                     variant="outline-danger"
                     className="me-2"
-                    onClick={() => eliminarProducto(id)}
+
+                    onClick={() => eliminarProducto(producto.id)}
+
                   >
                     🗑️ Eliminar
                   </Button>

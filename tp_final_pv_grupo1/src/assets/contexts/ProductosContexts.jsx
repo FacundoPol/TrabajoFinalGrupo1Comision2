@@ -21,7 +21,16 @@ export function ProductosProvider({ children }) {
                 throw new Error (`Error HTTP: ${response.status} - ${response.statusText || 'Desconocido'}`);
             }
         const data = await response.json();
-        setProductos(data);
+  const productosTransformados = data.map((p) => ({
+          id: p.id,
+          nombre: p.title,
+          precio: p.price,
+          categoria: p.category,
+          descripcion: p.description,
+          imagen: p.image,
+        }));
+
+        setProductos(productosTransformados);
         }
         catch(err){
             console.error("Fallo al solicitar los productos" , err);
@@ -43,7 +52,11 @@ export function ProductosProvider({ children }) {
        return [...prevProductos, {...nuevoProducto, id: idParaNuevoProducto}]; });
     console.log("Nuevo producto agregado localmente en el Context:", nuevoProducto);
   };
-
+const editarProducto = (productoEditado) => {
+    setProductos((prev) =>
+      prev.map((p) => (p.id === productoEditado.id ? productoEditado : p))
+    );
+  };
 
 
     //Funcion para eliminar producto
@@ -70,6 +83,7 @@ export function ProductosProvider({ children }) {
       favoritos,
       eliminarProducto,
       agregarProducto,
+       editarProducto,
       toggleFavorito,
       //verDetalles (lo inhabilito porque no lo estoy usando,pero iria aqui)
   };

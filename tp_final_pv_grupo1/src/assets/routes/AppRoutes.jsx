@@ -5,6 +5,11 @@ import Favoritos from "../pages/Favoritos";
 import About from "../pages/About";
 import ProductoDetalle from "../pages/ProductDetalle"; 
 
+import ProductoData from "../components/ProductData";
+import EditarProducto from "../pages/EditarProducto";
+
+
+
 export default function AppRoutes() {
   return (
     <Routes>
@@ -12,6 +17,10 @@ export default function AppRoutes() {
       <Route path="/favoritos" element={<Favoritos />} />
       <Route path="/acerca-de" element={<About />} />
       <Route path="/producto/:id" element={<ProductoDetalle />} /> 
+
+      <Route path="/agregar-prod" element={<ProductoData />} />
+      <Route path="/editar-producto/:id" element={<EditarProducto />} /> 
+
     </Routes> //agrego la ruta product/:id para usarla en listaProductos.jsx
   );
 }
