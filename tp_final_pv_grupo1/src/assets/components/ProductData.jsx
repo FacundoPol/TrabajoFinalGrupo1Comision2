@@ -4,7 +4,7 @@ import { Alert } from "react-bootstrap";
 import {useProductos} from '../hooks/useProductos'
 import {useParams} from "react-router-dom"
 
-const soloLetras =/^[a-zA-ZáéíóúÁÉÍÓÚñÑ0-9\s.\-_/*+()[\]{}$#"&%\.!°']+$/;
+const soloLetras =/^[a-zA-ZáéíóúÁÉÍÓÚñÑ0-9\s.,:;(){}\[\]$#"&%°'!/\-*+–_]+$/;
 const soloNumeros = /^\d+(\.\d{1,2})?$/;
 const base64Regex = /^data:image\/(jpeg|png|gif|bmp|webp|svg\+xml);base64,[A-Za-z0-9+/=]+$/;
 
