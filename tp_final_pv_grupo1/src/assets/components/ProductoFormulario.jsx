@@ -1,7 +1,7 @@
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 import { useState, useEffect } from "react"; 
 
-const soloLetras = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ0-9\s.\-_/*+()[\]{}$#"&%\.!°']+$/;
+const soloLetras = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ0-9\s.,:;(){}\[\]$#"&%°'!/\-*+–_]+$/;
 const soloNumeros = /^\d+(\.\d{1,2})?$/; // Permite enteros o decimales con hasta 2 dígitos después del punto
 const base64Regex = /^data:image\/(jpeg|png|gif|bmp|webp|svg\+xml);base64,[A-Za-z0-9+/=]+$/; // Para validar Base64 de imagen
 

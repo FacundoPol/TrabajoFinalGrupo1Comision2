@@ -39,7 +39,7 @@ export default function ListaFavoritos(){
                                         <Card.Text>${producto.precio}</Card.Text>
                                         <Button
                                             variant="danger"
-                                            onClick={() => toggleFavorito(producto.id)}> Quitar de Favoritos
+                                            onClick={() => toggleFavorito(producto.id)}>  Quitar de Favoritos
                                         </Button>
                                         <Button variant="dark"  
                                             className="me-2" //activo la ruta que ya esta definida en AppRoute /producto/:id
