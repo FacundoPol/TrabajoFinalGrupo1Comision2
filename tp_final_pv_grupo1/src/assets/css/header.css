@@ -1,0 +1,48 @@
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin : 20px
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #27ae60;
+  border-radius: 8px;
+  position: relative;
+}
+
+.logo-icon::before,
+.logo-icon::after {
+  content: "";
+  position: absolute;
+  background-color: white;
+  border-radius: 2px;
+}
+
+.logo-icon::before {
+  width: 70%;
+  height: 10%;
+  top: 30%;
+  left: 15%;
+}
+
+.logo-icon::after {
+  width: 40%;
+  height: 10%;
+  top: 50%;
+  left: 30%;
+}
+
+.logo-text {
+  color: #34495e;
+}
+
+.logo span {
+  color: #27ae60;
+}
