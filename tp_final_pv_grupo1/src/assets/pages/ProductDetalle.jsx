@@ -1,11 +1,12 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useProductos } from "../hooks/useProductos";
 import { Container, Card, Button } from "react-bootstrap";
-
+import useLogin from "../hooks/useLogin";
 
 export default function ProductoDetalle(){
     const { id } = useParams()
-    const { productos, favoritos, toggleFavorito } = useProductos()
+    const { productos, favoritos, toggleFavorito } = useProductos();
+    const {isAuthenticated,user} = useLogin();
 
 //  busca en el array productos el objeto cuyo id coincida con el id recibido a travez de useParams 
     const producto = productos.find((p) => String(p.id) === id) 
@@ -22,26 +23,28 @@ export default function ProductoDetalle(){
             <Card>
                 <Card.Img
                 variant="top"
-                src={producto.image}
+                src={producto.imagen}
                 style={{height: '300px', objectFit: 'contain'}}
                 />
                 <Card.Body>
                     <Card.Title>{producto.title}</Card.Title>
                     <Card.Text>
-                        <p>Precio: ${producto.price}</p>
+                        Precio: ${producto.precio}
                     </Card.Text>
                     <Card.Text>
-                        <p>Categoria: {producto.category || producto.categoria}</p>
+                        Categoria: {producto.category || producto.categoria}
                     </Card.Text>
                     <Card.Text>
-                        <p>Descripcion: {producto.description || producto.descripcion}</p>
+                        Descripcion: {producto.description || producto.descripcion}
                     </Card.Text>
-                    <Button
+                    
+                    { isAuthenticated && user?.rol === 'USUARIO'
+                    &&(<Button className="me-2"
                     variant={esFavorito ? 'danger' : 'outline-secondary'}
                     onClick={() => toggleFavorito(producto.id)}
                     >
                     {esFavorito ? 'Quitar de favoritos' : 'Marcar como favorito'}    
-                    </Button>
+                    </Button>)}
                     <Button variant="secondary" className="me-2" onClick={() => navigate(-1)}> 
                         Volver
                     </Button>

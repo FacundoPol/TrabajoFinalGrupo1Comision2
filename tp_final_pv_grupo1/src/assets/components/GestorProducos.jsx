@@ -3,9 +3,9 @@ import { Container, Row, Card, Button, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom'; //importo use navigate
 import useLogin from '../hooks/useLogin';
 
-const Productos = () => {
-  const {isAuthenticated,user,login} = useLogin();
-  const { productos, eliminarProducto, verDetalles, favoritos, toggleFavorito } = useProductos();
+const GestorProductos = () => {
+  const {isAuthenticated,user} = useLogin();
+  const { productos, eliminarProducto, verDetalles, favoritos } = useProductos();
   //agrego navigate para redirigir la ruta dinamica definida en AppRoutes
   //para el detalle del producto
 const navigate = useNavigate(); 
@@ -41,17 +41,30 @@ const navigate = useNavigate();
                   <Card.Text>${producto.precio} - ID: {producto.id}</Card.Text>
                   <Card.Text>{producto.descripcion.substring(0, 100)}</Card.Text>
 
-                  <Button variant="dark"  
+                  <Button variant="dark" 
                   className="me-2" //activo la ruta que ya esta definida en AppRoute /producto/:id
                   onClick={() => navigate(`/producto/${producto.id}`)}> Ver Detalles
                   </Button>    
 
-                  { isAuthenticated && user?.rol === 'USUARIO'
-                  &&(<Button className="me-2"
-                    variant={esFavorito ? "danger" : "outline-secondary"}
-                    onClick={() => toggleFavorito(producto.id)}
+                  { isAuthenticated && user?.rol === 'ADMINISTRATIVO'
+                  &&(
+                   <Button 
+                    className="me-2"
+                    variant="warning"
+                    onClick={() => navigate(`/editar-producto/${producto.id}`)}
+                    >
+                       Editar
+                    </Button>)}
+
+                  { isAuthenticated && user?.rol === 'ADMINISTRATIVO'
+                  &&(
+                  <Button
+                    variant="outline-danger"
+                    className="me-2"
+                    onClick={() => eliminarProducto(producto.id)}
+
                   >
-                    {esFavorito ? "❤️ Favorito" : "♡ Marcar favorito"}
+                    🗑️ Eliminar
                   </Button>)}
                 </Card.Body>
               </Card>
@@ -63,4 +76,4 @@ const navigate = useNavigate();
   );
 };
 
-export default Productos;
+export default GestorProductos;
