@@ -8,7 +8,7 @@ import ProductoData from "../components/ProductData";
 import EditarProducto from "../pages/EditarProducto";
 import LoginForm from "../pages/LoginForm";
 import GestionProductos from "../pages/GestionProductos";
-
+import Error from "../pages/Error";
 
 export default function AppRoutes() {
   return (
@@ -21,6 +21,7 @@ export default function AppRoutes() {
       <Route path="/editar-producto/:id" element={<EditarProducto />} />
       <Route path="/gestion-prod" element={<GestionProductos/>} />
       <Route path="/login" element={<LoginForm/>} />
+      <Route path="/error" element={<Error/>} />
 
     </Routes> //agrego la ruta product/:id para usarla en listaProductos.jsx
   );
