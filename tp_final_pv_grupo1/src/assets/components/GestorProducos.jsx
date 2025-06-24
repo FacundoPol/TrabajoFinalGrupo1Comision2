@@ -1,15 +1,23 @@
 import { useProductos } from '../hooks/useProductos';
-import { Container, Row, Card, Button, Col } from 'react-bootstrap';
+import { Container, Row, Card, Button, Col , Modal } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom'; //importo use navigate
 import useLogin from '../hooks/useLogin';
-
+import { useState } from 'react';
 const GestorProductos = () => {
   const {isAuthenticated,user} = useLogin();
-  const { productos, eliminarProducto, verDetalles, favoritos } = useProductos();
+  const { productos, eliminarProducto, favoritos } = useProductos();
   //agrego navigate para redirigir la ruta dinamica definida en AppRoutes
   //para el detalle del producto
 const navigate = useNavigate(); 
 
+//Estados para el confirmar eliminacion
+const [showModal, setShowModal] = useState(false);
+const [productoAEliminar, setProductoAEliminar] = useState(null);
+
+  const confirmarEliminacion = (id) => {
+    eliminarProducto(id);
+    setShowModal(false);
+  };
 
 // Normalizar los datos de API y los nuevos prod
   const productosNormalizados = productos.map(p => ({
@@ -56,22 +64,50 @@ const navigate = useNavigate();
                        Editar
                     </Button>)}
 
-                  { isAuthenticated && user?.rol === 'ADMINISTRATIVO'
-                  &&(
-                  <Button
-                    variant="outline-danger"
-                    className="me-2"
-                    onClick={() => eliminarProducto(producto.id)}
-
-                  >
-                    🗑️ Eliminar
-                  </Button>)}
+                  {isAuthenticated && user?.rol === 'ADMINISTRATIVO' && (
+                    <>
+                      <Button
+                        variant="outline-danger"
+                        className="me-2"
+                        onClick={() => {
+                          setProductoAEliminar(producto);
+                          setShowModal(true);
+                        }}
+                      >
+                        🗑️ Eliminar
+                      </Button>
+                    </>
+                  )}
                 </Card.Body>
               </Card>
             </Col>
           );
         })}
       </Row>
+       {/* Modal de confirmación */}
+      <Modal show={showModal} onHide={() => setShowModal(false)} centered>
+        <Modal.Header closeButton>
+          <Modal.Title>Confirmar eliminación</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          {productoAEliminar && (
+            <p>
+              ¿Estás seguro de eliminar <strong>{productoAEliminar.nombre}</strong>?
+            </p>
+          )}
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setShowModal(false)}>
+            Cancelar
+          </Button>
+          <Button
+            variant="danger"
+            onClick={() => confirmarEliminacion(productoAEliminar.id)}
+          >
+            Eliminar
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </Container>
   );
 };
