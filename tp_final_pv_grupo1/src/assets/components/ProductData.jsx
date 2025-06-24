@@ -54,9 +54,9 @@ const ProductoData = ({ esEdicion = false, onEdicionExitosa }) => {
             
             valid = false;
             mensaje = 'El precio debe ser un número válido y mayor que cero.';
-        } else if (!producto.categoria || !soloLetras.test(producto.categoria)) {
+        } else if (!producto.categoria) {
             valid = false;
-            mensaje = 'La categoría es obligatoria y solo debe contener letras.';
+            mensaje = 'La categoría es obligatoria. Por favor, selecciona una opción.';
         } else if (!producto.descripcion || producto.descripcion.trim() === '') {
             valid = false;
             mensaje = 'La descripción es obligatoria.';

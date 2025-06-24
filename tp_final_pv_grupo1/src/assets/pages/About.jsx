@@ -1,39 +1,8 @@
 import { Card, Container, Row, Col } from "react-bootstrap"
 import Footer from "../components/Footer";
+import integrantesData from "../data/integrantesData.json"
 
 export default function Acerca () {
-    const integrantes = [
-    {
-        nombre: 'Abregu Miguel',
-        correo: 'Miguel_af_555@hotmail.com',
-        img: 'https://avatars.githubusercontent.com/u/122323946?v=4',
-        link: 'https://github.com/MAAMiguelAngelAbregu'
-    },
-    {
-         nombre: 'Aramayo Gerardo',
-         correo: 'leon.capo2000@gmail.com', 
-         img: 'https://avatars.githubusercontent.com/u/166179617?v=4',
-         link: 'https://github.com/GerardoXL'
-    },
-    {
-         nombre: 'Pol Facundo',
-         correo: 'facundopol24@gmail.com', 
-         img: 'https://avatars.githubusercontent.com/u/97904095?v=4',
-         link: 'https://github.com/FacundoPol'
-    },
-    {
-         nombre: 'Rios Sofia',
-         correo: 'Sofirios_92@hotmail.com', 
-         img: 'https://avatars.githubusercontent.com/u/205240577?v=4',
-         link: 'https://github.com/SM-RIOS'
-    },
-    {
-         nombre: 'Villalba Ezequiel',
-         correo: 'ezequielvillagf@gmail.com', 
-         img: 'https://avatars.githubusercontent.com/u/116243645?v=4',
-         link: 'https://github.com/EzequielVillalba10'
-    }
-     ];
 
 return (
 <div className="acerca-page">
@@ -72,7 +41,7 @@ return (
           Los integrantes que hicieron posible este proyecto son:
           </p>
     <Row xs={1} md={2} lg={3} className="g-4 justify-content-center"> 
-     {integrantes.map((integrante, idx) => (
+     {integrantesData.map((integrante, idx) => (
          <Col key={idx} className="d-flex" >
          <Card className="flex-fill"> 
          <Card.Img variant="top" src={integrante.img} alt={`Foto de ${integrante.nombre}`} />

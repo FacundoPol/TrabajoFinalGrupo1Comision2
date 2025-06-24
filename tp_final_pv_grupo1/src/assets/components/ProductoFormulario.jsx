@@ -5,17 +5,15 @@ const soloLetras = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ0-9\s.,:;(){}\[\]$#"&%°'!/\
 const soloNumeros = /^\d+(\.\d{1,2})?$/; // Permite enteros o decimales con hasta 2 dígitos después del punto
 const base64Regex = /^data:image\/(jpeg|png|gif|bmp|webp|svg\+xml);base64,[A-Za-z0-9+/=]+$/; // Para validar Base64 de imagen
 
-  /* ProductoFormulario es un componente  formulario para ingresar datos de un producto.
-   Recopila los datos y los pasa a una función de carga del componente padre.
-   Se resetea cuando se le indica */
-
-
    const esImagenValida = (img) => {
   if (!img) return false;
   if (img.startsWith("data:image/")) return true; // base64
   return /\.(jpeg|jpg|png|gif|bmp|webp|svg)$/i.test(img); // URL
 };
 
+ /* ProductoFormulario es un componente  formulario para ingresar datos de un producto.
+   Recopila los datos y los pasa a una función de carga del componente padre.
+   Se resetea cuando se le indica */
 const ProductoFormulario = ({ 
     cargarDatos,
   resetearFormulario,
@@ -128,17 +126,13 @@ const ProductoFormulario = ({
                type="file"
                id="imagen"
                accept="image/*"
-              /* * isInvalid={mostrarValidacion && (!imagenArchivo || !base64Regex.test(imagenPrevisualizacion))}}*/
                onChange={imagenCarga}
                 isInvalid={
                       mostrarValidacion && !esImagenValida(imagenPrevisualizacion)
                     } 
              />
               <Form.Control.Feedback type="invalid">
-                Debes subir una imagen válida (base64 o URL con formato de imagen).
-              {/*{mostrarValidacion && (!imagenArchivo || !base64Regex.test(imagenPrevisualizacion))
-                ? "Debe seleccionar una imagen válida."
-                : "Por favor, selecciona un archivo de imagen."} */}
+                Debes subir una imagen válida
               </Form.Control.Feedback>
                 {imagenPrevisualizacion && (
                 <div className="mt-2">
@@ -187,21 +181,25 @@ const ProductoFormulario = ({
              </Form.Group>
 
              <Form.Group className="mb-3">
-             <Form.Label>Categoria</Form.Label> 
-             <Form.Control
-               type="text"
-               placeholder="ingrese categoria"
-               id="categoria"
-               value={categoria}
-               isInvalid={mostrarValidacion && (!categoria || !soloLetras.test(categoria))}
-               onChange={(e) => setCategoria(e.target.value)}
-              />
-               <Form.Control.Feedback type="invalid">
+              <Form.Label>Categoría</Form.Label>
+              <Form.Select
+                id="categoria"
+                value={categoria}
+                onChange={(e) => setCategoria(e.target.value)}
+                isInvalid={mostrarValidacion && !categoria}
+              >
+                <option value="">Selecciona una categoría</option> 
+                <option value="men's clothing">Men's Clothing</option>
+                <option value="jewelery">Jewelery</option>
+                <option value="electronics">Electronics</option>
+                <option value="women's clothing">Women's Clothing</option>
+              </Form.Select>
+              <Form.Control.Feedback type="invalid">
                 {mostrarValidacion && !categoria
-                ? "La categoria es obligatoria."
-                : "La categoria debe contener solo letras y espacios."}
-                </Form.Control.Feedback>
-             </Form.Group>
+                  ? "La categoría es obligatoria."
+                  : "Por favor, selecciona una categoría."}
+              </Form.Control.Feedback>
+            </Form.Group>
 
              <Form.Group className="mb-3">
              <Form.Label>descripcion</Form.Label> 
