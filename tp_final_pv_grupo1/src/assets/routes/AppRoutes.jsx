@@ -10,6 +10,7 @@ import LoginForm from "../pages/LoginForm";
 import GestionProductos from "../pages/GestionProductos";
 import Error from "../pages/Error";
 import ProtectorRoutes from "../components/ProtectorRoutes";
+import PapeleraProductos from "../pages/PapeleraProductos"
 
 export default function AppRoutes() {
   return (
@@ -21,6 +22,7 @@ export default function AppRoutes() {
       <Route path="/agregar-prod" element={<ProtectorRoutes roles={['ADMINISTRATIVO']}><ProductoData /></ProtectorRoutes>} />
       <Route path="/editar-producto/:id" element={<ProtectorRoutes roles={['ADMINISTRATIVO']}><EditarProducto /></ProtectorRoutes>} />
       <Route path="/gestion-prod" element={<ProtectorRoutes roles={['ADMINISTRATIVO']}><GestionProductos/></ProtectorRoutes>} />
+      <Route path="/papelera-prod" element={<ProtectorRoutes roles={['ADMINISTRATIVO']}><PapeleraProductos/></ProtectorRoutes>} />
       <Route path="/login" element={<LoginForm/>} />
       <Route path="/error" element={<Error/>} />
 
