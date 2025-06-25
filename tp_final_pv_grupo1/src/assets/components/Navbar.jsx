@@ -15,7 +15,7 @@ export default function AppNavbar(){
     return(
         <div>
             <Header />
-        <Navbar bg= "success" variant="dark" expand="lg">
+        <Navbar bg= "success" variant="dark" expand="lg" className="m-3">
             <Container>
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-navbar-nav">
@@ -29,13 +29,14 @@ export default function AppNavbar(){
                         <>
                             <Nav.Link as={Link} to="/gestion-prod">Gestión de Productos</Nav.Link>
                             <Nav.Link as={Link} to="/agregar-prod">Agregar Producto</Nav.Link>
+                            <Nav.Link as={Link} to="/papelera-prod">Papelera Productos</Nav.Link>
                         </>)}
 
                         <Nav.Link as={Link} to="/acerca-de">Acerca de</Nav.Link>
                     </Nav>
                     <Nav className="ms-auto gap-4">
                     {isAuthenticated?
-                    (<Nav className="identificador_user"><i className="bi bi-person-circle" style={{ fontSize: '2rem' }}></i>{user.username.toUpperCase()}</Nav>)
+                    (<Nav className="identificador_user"><i className="bi bi-person-circle" ></i>{user.username.toUpperCase()}</Nav>)
                     :('')}
                     {isAuthenticated?
                     (<Button variant="primary" onClick={handleLogout}>Cerrar Sesion</Button>):

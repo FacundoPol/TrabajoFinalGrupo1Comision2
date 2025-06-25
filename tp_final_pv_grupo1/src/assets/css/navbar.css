@@ -4,5 +4,9 @@
 }
  .identificador_user i {
     margin-right: 5px;
-    
+    font-size:2rem ;
+}
+
+Navbar{
+    padding-bottom: 10px;
 }

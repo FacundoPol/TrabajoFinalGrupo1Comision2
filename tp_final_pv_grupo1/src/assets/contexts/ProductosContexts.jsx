@@ -73,6 +73,11 @@ const productosFiltrados = categoriaSeleccionada
     prevProductos.map((producto) => producto.id === id? {...producto, eliminado:true } : producto)
   );}
 
+  const recuperarProducto = (id) => {
+    setProductos((prevProductos) =>
+    prevProductos.map((producto) => producto.id === id? {...producto, eliminado:false } : producto)
+  );}
+
    //Función para alternar entre "favorito/no Favorito"
   const toggleFavorito = (id) => {
     setFavoritos((prev) =>
@@ -93,6 +98,7 @@ const productosFiltrados = categoriaSeleccionada
       setCategoriaSeleccionada,
       favoritos,
       eliminarProducto,
+      recuperarProducto,
       agregarProducto,
        editarProducto,
       toggleFavorito,
