@@ -1,7 +1,9 @@
 import {Navbar, Nav, Container, Button} from "react-bootstrap";
+import 'bootstrap-icons/font/bootstrap-icons.css'
 import {Link, useNavigate} from "react-router-dom";
 import Header from "./Header"
 import useLogin from "../hooks/useLogin";
+import '../css/navbar.css'
 
 export default function AppNavbar(){
     const {logout,isAuthenticated,user} = useLogin();
@@ -31,7 +33,10 @@ export default function AppNavbar(){
 
                         <Nav.Link as={Link} to="/acerca-de">Acerca de</Nav.Link>
                     </Nav>
-                    <Nav className="ms-auto">
+                    <Nav className="ms-auto gap-4">
+                    {isAuthenticated?
+                    (<Nav className="identificador_user"><i className="bi bi-person-circle" style={{ fontSize: '2rem' }}></i>{user.username.toUpperCase()}</Nav>)
+                    :('')}
                     {isAuthenticated?
                     (<Button variant="primary" onClick={handleLogout}>Cerrar Sesion</Button>):
                     (<Nav.Link className="text-white bg-dark px-3 rounded" as={Link} to="/login">Iniciar Sesion</Nav.Link>)}

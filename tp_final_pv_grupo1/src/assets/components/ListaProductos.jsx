@@ -18,6 +18,7 @@ const navigate = useNavigate();
     precio: p.precio || p.Precio || p.price || 0,
     imagen: p.imagen || p["Imagen representativa"] || p.image || "https://www.italfren.com.ar/images/catalogo/imagen-no-disponible.jpeg",
     descripcion: p.descripcion || p.Descripcion || p.description || "Sin descripción",
+    eliminado: p.eliminado || false
   }));
 
 
@@ -25,7 +26,9 @@ const navigate = useNavigate();
     <Container>
       <h3>Lista de Productos:</h3>
       <Row>
-        {productosNormalizados.map((producto) => {
+        {productosNormalizados
+        .filter((producto)=>!producto.eliminado)
+        .map((producto) => {
           const esFavorito = favoritos.includes(producto.id);
 
           return (
@@ -39,7 +42,7 @@ const navigate = useNavigate();
                 <Card.Body>
                   <Card.Title>{producto.nombre}</Card.Title>
                   <Card.Text>${producto.precio} - ID: {producto.id}</Card.Text>
-                  <Card.Text>{producto.descripcion.substring(0, 100)}</Card.Text>
+                  <Card.Text>{producto.descripcion.substring(0, 50)}</Card.Text>
 
                   <Button variant="dark"  
                   className="me-2" //activo la ruta que ya esta definida en AppRoute /producto/:id
