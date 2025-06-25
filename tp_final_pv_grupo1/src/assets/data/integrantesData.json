@@ -1,0 +1,33 @@
+[
+    {
+        "nombre": "Abregu Miguel",
+        "correo": "Miguel_af_555@hotmail.com",
+        "img": "https://avatars.githubusercontent.com/u/122323946?v=4",
+        "link": "https://github.com/MAAMiguelAngelAbregu"
+    },
+    {
+         "nombre": "Aramayo Gerardo",
+         "correo": "leon.capo2000@gmail.com", 
+         "img" :"https://avatars.githubusercontent.com/u/166179617?v=4",
+         "link": "https://github.com/GerardoXL"
+    },
+    {
+         "nombre": "Pol Facundo",
+         "correo": "facundopol24@gmail.com", 
+         "img": "https://avatars.githubusercontent.com/u/97904095?v=4",
+         "link": "https://github.com/FacundoPol"
+    },
+    {
+         "nombre": "Rios Sofia",
+         "correo": "Sofirios_92@hotmail.com", 
+         "img": "https://avatars.githubusercontent.com/u/205240577?v=4",
+         "link": "https://github.com/SM-RIOS"
+    },
+    {
+         "nombre": "Villalba Ezequiel",
+         "correo": "ezequielvillagf@gmail.com", 
+         "img": "https://avatars.githubusercontent.com/u/116243645?v=4",
+         "link": "https://github.com/EzequielVillalba10"
+    }
+
+]
