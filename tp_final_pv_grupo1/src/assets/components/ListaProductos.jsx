@@ -5,14 +5,14 @@ import useLogin from '../hooks/useLogin';
 
 const Productos = () => {
   const {isAuthenticated,user,login} = useLogin();
-  const { productos, eliminarProducto, verDetalles, favoritos, toggleFavorito } = useProductos();
+  const { productosFiltrados, eliminarProducto, verDetalles, favoritos, toggleFavorito } = useProductos();
   //agrego navigate para redirigir la ruta dinamica definida en AppRoutes
   //para el detalle del producto
 const navigate = useNavigate(); 
 
 
 // Normalizar los datos de API y los nuevos prod
-  const productosNormalizados = productos.map(p => ({
+  const productosNormalizados = productosFiltrados.map(p => ({
     id: p.id || p.Id,
     nombre: p.nombre || p.Nombre || p.title || "Sin nombre",
     precio: p.precio || p.Precio || p.price || 0,

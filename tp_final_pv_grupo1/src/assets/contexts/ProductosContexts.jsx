@@ -58,6 +58,13 @@ const editarProducto = (productoEditado) => {
     );
   };
 
+  const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("");
+
+// función p/ filtrar los prod s/  cat seleccionada
+const productosFiltrados = categoriaSeleccionada
+  ? productos.filter(p => p.categoria === categoriaSeleccionada)
+  : productos;
+
 
     //Funcion para eliminar producto
     const eliminarProducto = (id) => {
@@ -80,6 +87,9 @@ const editarProducto = (productoEditado) => {
       productos,
       loading,
       error,
+      productosFiltrados, // <-  prod que coincidan con la cat seleccionada
+      categoriaSeleccionada,
+      setCategoriaSeleccionada,
       favoritos,
       eliminarProducto,
       agregarProducto,
