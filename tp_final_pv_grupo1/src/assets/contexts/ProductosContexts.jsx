@@ -28,6 +28,7 @@ export function ProductosProvider({ children }) {
           categoria: p.category,
           descripcion: p.description,
           imagen: p.image,
+          eliminado:false
         }));
 
         setProductos(productosTransformados);
@@ -67,9 +68,9 @@ const productosFiltrados = categoriaSeleccionada
 
 
     //Funcion para eliminar producto
-    const eliminarProducto = (id) => {
-  setProductos((prevProductos) =>
-    prevProductos.filter((producto) => producto.id !== id)
+  const eliminarProducto = (id) => {
+    setProductos((prevProductos) =>
+    prevProductos.map((producto) => producto.id === id? {...producto, eliminado:true } : producto)
   );}
 
    //Función para alternar entre "favorito/no Favorito"

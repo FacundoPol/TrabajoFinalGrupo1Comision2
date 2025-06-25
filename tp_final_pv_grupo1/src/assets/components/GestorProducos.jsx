@@ -26,6 +26,7 @@ const [productoAEliminar, setProductoAEliminar] = useState(null);
     precio: p.precio || p.Precio || p.price || 0,
     imagen: p.imagen || p["Imagen representativa"] || p.image || "https://www.italfren.com.ar/images/catalogo/imagen-no-disponible.jpeg",
     descripcion: p.descripcion || p.Descripcion || p.description || "Sin descripción",
+    eliminado: p.eliminado || false
   }));
 
 
@@ -33,7 +34,9 @@ const [productoAEliminar, setProductoAEliminar] = useState(null);
     <Container>
       <h3>Lista de Productos:</h3>
       <Row>
-        {productosNormalizados.map((producto) => {
+        {productosNormalizados
+        .filter((producto)=>!producto.eliminado)
+        .map((producto) => {
           const esFavorito = favoritos.includes(producto.id);
 
           return (

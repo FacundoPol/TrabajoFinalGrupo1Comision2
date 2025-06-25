@@ -9,17 +9,18 @@ import EditarProducto from "../pages/EditarProducto";
 import LoginForm from "../pages/LoginForm";
 import GestionProductos from "../pages/GestionProductos";
 import Error from "../pages/Error";
+import ProtectorRoutes from "../components/ProtectorRoutes";
 
 export default function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/favoritos" element={<Favoritos />} />
       <Route path="/acerca-de" element={<About />} />
       <Route path="/producto/:id" element={<ProductoDetalle />} /> 
-      <Route path="/agregar-prod" element={<ProductoData />} />
-      <Route path="/editar-producto/:id" element={<EditarProducto />} />
-      <Route path="/gestion-prod" element={<GestionProductos/>} />
+      <Route path="/favoritos" element={<ProtectorRoutes roles={['USUARIO']}><Favoritos /></ProtectorRoutes>} />
+      <Route path="/agregar-prod" element={<ProtectorRoutes roles={['ADMINISTRATIVO']}><ProductoData /></ProtectorRoutes>} />
+      <Route path="/editar-producto/:id" element={<ProtectorRoutes roles={['ADMINISTRATIVO']}><EditarProducto /></ProtectorRoutes>} />
+      <Route path="/gestion-prod" element={<ProtectorRoutes roles={['ADMINISTRATIVO']}><GestionProductos/></ProtectorRoutes>} />
       <Route path="/login" element={<LoginForm/>} />
       <Route path="/error" element={<Error/>} />
 
