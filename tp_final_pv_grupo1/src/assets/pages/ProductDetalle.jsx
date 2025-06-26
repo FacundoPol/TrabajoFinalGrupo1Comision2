@@ -27,14 +27,14 @@ export default function ProductoDetalle(){
                 style={{height: '300px', objectFit: 'contain'}}
                 />
                 <Card.Body>
-                    <Card.Title>{producto.title}</Card.Title>
-                    <Card.Text>
+                    <Card.Title className="producto-nombre">{producto.title}</Card.Title>
+                    <Card.Text className="producto-precio">
                         Precio: ${producto.precio}
                     </Card.Text>
-                    <Card.Text>
+                    <Card.Text className="producto-categoria">
                         Categoria: {producto.category || producto.categoria}
                     </Card.Text>
-                    <Card.Text>
+                    <Card.Text className="producto-descripcion">
                         Descripcion: {producto.description || producto.descripcion}
                     </Card.Text>
                     

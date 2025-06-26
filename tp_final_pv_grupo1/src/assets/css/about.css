@@ -1,0 +1,40 @@
+.acerca-page{
+    padding: 30px;
+    background-color: rgb(25, 135, 84)
+    
+}
+.text-center{
+    text-align: center;
+    color: aliceblue;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+.parrafo-about{
+    text-align: center;
+    color: aliceblue;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+.li-about{
+    color: aliceblue;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+.acerca-page h2{
+    text-align: center;
+    color:aliceblue;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-shadow: 1px 1px black;
+}
+.acerca-page ul{
+    padding-left: 30px;
+}
+.acerca-page li{
+    margin-bottom: 5px;
+}
+.acerca-page .card{
+    box-shadow: 0 4px 8px;
+    border-radius: 50px;   
+    margin-bottom: 70px; 
+}

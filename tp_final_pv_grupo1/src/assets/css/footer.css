@@ -1,0 +1,17 @@
+.footer{
+    background-color: rgb(11, 24, 17);
+    color: aliceblue;
+    padding: 30px;
+    text-align: center;
+}
+.footer-content{
+    margin: 0 auto;
+}
+.footer-text{
+    font-family: sans-serif;
+    font-weight: bold;
+}
+.footer-integrantes{
+    font-family: sans-serif;
+    font-weight: bold;
+}

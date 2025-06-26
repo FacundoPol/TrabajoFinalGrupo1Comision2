@@ -1,0 +1,11 @@
+.filtro-select{
+    border: 2px solid black !important;
+    border-radius: 8px;
+}
+.filtro{
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    
+}

@@ -7,7 +7,7 @@ export default function Favoritos() {
   return (
     <Container>
       
-      <h1>Mis Productos Favoritos</h1>
+      <h1 className='h1'>Mis Productos Favoritos</h1>
       <ListaFavoritos/>
       <Footer />
     </Container>
