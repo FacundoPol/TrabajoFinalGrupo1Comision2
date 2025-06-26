@@ -1,6 +1,7 @@
 import { useProductos } from '../hooks/useProductos';
 import { Container, Row, Col, Card, Button, CardBody } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom'
+import "../css/favoritos.css";
 
 //exporto el componente ListaFavoritos para usarlo dentro de Favoritos.jsx
 //y mostrar los productos marcados como fav. 
@@ -17,14 +18,14 @@ export default function ListaFavoritos(){
     const navigate = useNavigate();
 
     return (
-        <Container>
+        <Container className='productos-page'>
             <Row>
                 {productosFavoritos.lenght === 0 ? (
                  <p>No hay productos marcados como favoritos</p>   
                 ):(
                     productosFavoritos.map((producto) => (
-                        <Col key={producto.id} className='mb-4'>
-                            <Card>
+                        <Col key={producto.id} className='mb-4 d-flex'>
+                            <Card className='producto-card flex-fill d-flex flex-column'>
                                 <Card.Img
                                     variant="top"
                                     src={producto.imagen}
@@ -35,8 +36,8 @@ export default function ListaFavoritos(){
                                     }}
                                     />
                                     <Card.Body>
-                                        <Card.Title>{producto.nombre}</Card.Title>
-                                        <Card.Text>${producto.precio}</Card.Text>
+                                        <Card.Title className='producto-nombre'>{producto.nombre}</Card.Title>
+                                        <Card.Text className='producto-precio'>${producto.precio}</Card.Text>
                                         <Button
                                             variant="danger"
                                             onClick={() => toggleFavorito(producto.id)}>  Quitar de Favoritos

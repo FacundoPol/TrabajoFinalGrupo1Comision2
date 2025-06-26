@@ -1,5 +1,6 @@
 import { useProductos } from '../hooks/useProductos';
 import { Form, Row, Col } from "react-bootstrap";
+import "../css/filtro.css";
 
 
 const FiltroCategoria = () => {
@@ -9,10 +10,11 @@ const FiltroCategoria = () => {
   const categorias = Array.from(new Set(productos.map(p => p.categoria)));
 
   return (
-    <Form.Group as={Row} controlId="categoriaSelect" className="mb-4">
+    <Form.Group as={Row} controlId="categoriaSelect" className="mb-4 filtro">
       <Form.Label column sm="2">Categoría:</Form.Label>
       <Col sm="10">
         <Form.Select
+        className="filtro-select"
           value={categoriaSeleccionada}
           onChange={(e) => setCategoriaSeleccionada(e.target.value)}
         >

@@ -3,6 +3,7 @@ import { Container, Row, Card, Button, Col , Modal } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom'; //importo use navigate
 import useLogin from '../hooks/useLogin';
 import { useState } from 'react';
+import "../css/home.css";
 const GestorProductos = () => {
   const {isAuthenticated,user} = useLogin();
   const { productos, eliminarProducto, favoritos } = useProductos();
@@ -31,8 +32,8 @@ const [productoAEliminar, setProductoAEliminar] = useState(null);
 
 
   return (
-    <Container>
-      <h3>Lista de Productos:</h3>
+    <Container className='productos-page'>
+      <h3 className='h3'>Lista de Productos</h3>
       <Row>
         {productosNormalizados
         .filter((producto)=>!producto.eliminado)
@@ -40,17 +41,17 @@ const [productoAEliminar, setProductoAEliminar] = useState(null);
           const esFavorito = favoritos.includes(producto.id);
 
           return (
-            <Col key={producto.id} sm={12} md={6} lg={4} className="mb-4">
-              <Card>
+            <Col key={producto.id} sm={12} md={6} lg={4} className="mb-4 d-flex">
+              <Card className='producto-card flex-fill d-flex flex-column'>
                 <Card.Img
                   variant="top"
                   src={producto.imagen}
                   style={{ height: '200px', objectFit: 'contain', backgroundColor: '#f8f9fa' }}
                 />
                 <Card.Body>
-                  <Card.Title>{producto.nombre}</Card.Title>
-                  <Card.Text>${producto.precio} - ID: {producto.id}</Card.Text>
-                  <Card.Text>{producto.descripcion.substring(0, 100)}</Card.Text>
+                  <Card.Title className='producto-nombre'>{producto.nombre}</Card.Title>
+                  <Card.Text className='producto-precio'>${producto.precio} - ID: {producto.id}</Card.Text>
+                  <Card.Text className='producto-descripcion'>{producto.descripcion.substring(0, 100)}</Card.Text>
 
                   <Button variant="dark" 
                   className="me-2" //activo la ruta que ya esta definida en AppRoute /producto/:id
