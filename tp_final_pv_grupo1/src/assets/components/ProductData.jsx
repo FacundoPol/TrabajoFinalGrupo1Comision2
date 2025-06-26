@@ -71,10 +71,6 @@ const ProductoData = ({ esEdicion = false, onEdicionExitosa }) => {
         return valid;
     };
 
-    /* La siguente funcion cargarDatos es una funcion callback que recibe los datos del formulario hijo.
-      Valida los datos y si son correctos, los agrega al contexto de productos.
-      Gestiona los estados de éxito y reseteo del formulario.
-    */
     const cargarDatos = (nuevoProductoRecibido) => {
         setError({ error: false, mensaje: '' });
         setExito(false);
