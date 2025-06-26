@@ -5,7 +5,7 @@ const ProtectorRoutes = ({roles,children})=>{
     const {isAuthenticated,user} = useLogin();
 
     if(!isAuthenticated){
-        return <Navigate to="/error" replace />
+        return <Navigate to="/" replace />
     }
 
     if(roles && !roles.includes(user?.rol)){

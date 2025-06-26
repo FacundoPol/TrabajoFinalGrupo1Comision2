@@ -19,21 +19,8 @@ const EditarProducto = () => {
     if (existente) {
       setProductoSeleccionado(existente);
       setLoading(false);
-    } else {
-      // Reemplaza con la URL real de API
-      fetch(`https://tu-api.com/productos/${id}`)
-        .then((res) => res.json())
-        .then((data) => {
-          setProductoSeleccionado(data);
-          setLoading(false);
-        })
-        .catch((err) => {
-          console.error("Error cargando el producto", err);
-          setProductoSeleccionado(null);
-          setLoading(false);
-        });
     }
-  }, [id, productos]);
+  }, [productos]);
 
   const handleEdicionExitosa = () => {
     navigate("/productos");
